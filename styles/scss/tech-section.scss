@@ -1,0 +1,45 @@
+@import 'variables';
+
+.tech-section{
+  position: relative;
+  height: 20rem;
+  background: $secondSection;
+}
+
+
+.tech-simple{
+  background: gray;
+}
+
+.side-nav-trigger{
+  cursor: pointer;
+}
+
+.side-nav{
+  position: fixed;
+  transition: all 1s ease-in-out;
+  background: gray;
+}
+
+.show-side{
+  transform: translate( 300px );
+  position: fixed;
+  top: 85px;
+  right:300px;
+  opacity: 1;
+  width: 300px;
+  //height: 300px;
+}
+
+.hide-side{
+  position: fixed;
+ // top: -300px;
+  opacity: 0;
+  right: -300px;
+  width: 300px;
+  //height: 300px;
+}
+
+.side-nav-label{
+  text-decoration-line: underline;
+}

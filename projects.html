@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/css/main.css" />
+  <title>Title</title>
+</head>
+<body>
+
+<div class="fix">
+  <div class="frow">
+    <div class="fcol-full">
+      <div class="frow between-fcol">
+        <div class="fcol-0"></div>
+        <div class="fcol-3 set-height">
+          <h1 class="click-item" onclick="goToPage('main')">Steve Mieskoski</h1>
+        </div>
+        <div class="fcol-2">
+          <h1 id="projects-label" class="fcol-2 projects-label click-item">Projects</h1>
+          <div >
+          <span class="top-nav-trigger sub-font click-item" onclick="showSlide(null, 'top')">Project List</span>
+
+            <div id="top-nav" class="top-nav hide-top frow">
+              <div class="fcol-full">
+                <dl class="sub-font">
+                  <dt class="top-nav-label">Simple</dt>
+                  <dd class="click-item" onclick="showSlide('calc', 'top')"> Calculator</dd>
+                  <dd class="click-item" onclick="showSlide('simon', 'top')">Simon Game</dd>
+                  <dd class="click-item" onclick="showSlide('tic', 'top')">Tic Tac Toe</dd>
+                  <dt class="top-nav-label">Intermediate</dt>
+                  <dd class="click-item" onclick="showSlide('jhuntr', 'top')">Jhuntr.com</dd>
+                  <dd class="click-item" onclick="showSlide('OldPersonal', 'top')">(old) stevemieskoski.com</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+          <h1 id="technologies-label" class="fcol-2 click-item"  onclick="goToPage('tech')">Technologies</h1>
+        <h1 class="fcol-2 click-item" onclick="goToPage('about')">About</h1>
+        <h1 class="fcol-1 click-item" onclick="goToPage('blog')">Blog</h1>
+        <h1 class="fcol-1 click-item " onclick="goToPage('contact')">Contact</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content-insert">
+<div class="frow">
+  <div class="fcol-full  header-top-buffer"></div>
+  <div class="right-boundary">
+
+  </div>
+  <div class="fcol-7">
+    <div class="">
+      <div class="frow">
+
+        <div class="fcol-full" id="calc">
+          <h1>Simple Projects</h1>
+        <span class="alt-script project-label">Calculator In Javascript</span>
+          <div class="calculator-contain">
+            <iframe  class="calculator frame-one" src="src/projects/calculator/index.html" ></iframe>
+          </div>
+        </div>
+        <div class="fcol-full" id="simon">
+         <span  class="alt-script project-label">Simon In Javascript</span>
+          <div class="simon-contain frame-one">
+            <iframe  class="simon" src="src/projects/SimonChallenge/SimonChallenge.html" ></iframe>
+          </div>
+        </div>
+        <div class="fcol-full" id="tic">
+
+            <span class="alt-script project-label">An Example of Tic Tac Toe</span>
+          <div class="tic-tac-toe-contain frame-one">
+            <iframe  class="tic-tac-toe" src="src/projects/TicTacToe/index.html" ></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="fcol-2"></div>
+  <div class="right-boundary"></div>
+  <div class="fcol-7">
+    <div class="">
+      <div class="frow">
+        <div class="fcol-full">
+          <h1 class="int-projects">Intermediate Projects</h1>
+        </div>
+        <div class="fcol-full" >
+          <div class="jh-frame-container" id="jhuntr">
+            <span class="alt-script project-label">Jhuntr </span>
+            <img class="jh-frame" src="assets/images/res copy page.svg">
+          </div>
+        </div>
+        <div class="fcol-full" >
+          <h1 class="int-projects" id="OldPersonal">Old Personal Site</h1>
+          <div class="jh-frame-container">
+            <img class="jh-frame" src="assets/images/res copy page.svg">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="fcol-2"></div>
+
+</div>
+</div>
+<script src="src/js/smoothscroll-polyfill.js"></script>
+<script src="src/js/rAF-polyfill.js"></script>
+<script src="src/js/index.js"></script>
+</body>
+</html>

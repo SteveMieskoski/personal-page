@@ -1,0 +1,32 @@
+.tech-section {
+  position: relative;
+  height: 20rem;
+  background: #6c89be; }
+
+.tech-simple {
+  background: gray; }
+
+.side-nav-trigger {
+  cursor: pointer; }
+
+.side-nav {
+  position: fixed;
+  transition: all 1s ease-in-out;
+  background: gray; }
+
+.show-side {
+  transform: translate(300px);
+  position: fixed;
+  top: 85px;
+  right: 300px;
+  opacity: 1;
+  width: 300px; }
+
+.hide-side {
+  position: fixed;
+  opacity: 0;
+  right: -300px;
+  width: 300px; }
+
+.side-nav-label {
+  text-decoration-line: underline; }

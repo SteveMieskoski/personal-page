@@ -1,0 +1,149 @@
+
+@import url("https://fonts.googleapis.com/css?family=Space+Mono:400,700i");
+body {
+    font-family: 'Space Mono', monospace;
+    background-color: #212121;
+}
+
+.contain{
+    position:absolute;
+    color: white;
+    top: 10px;
+    left: 40%;
+}
+.contain > .mark-select{
+    position:absolute;
+    color: white;
+    left: -170px;
+}
+
+.title-main {
+    color: black;
+    padding: 0 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2em;
+}
+
+@media (max-width: 1000px) {
+    .box {
+        height: calc(25vw - 2rem);
+
+    }
+}
+
+/*
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 calc(25% - 1rem);
+        -ms-flex: 0 0 calc(25% - 1rem);
+        flex: 0 0 calc(25% - 1rem);
+ */
+@media (max-width: 700px) {
+    .box {
+        height: calc(50vw - 2rem);
+
+    }
+}
+
+/*
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 calc(50% - 1rem);
+        -ms-flex: 0 0 calc(50% - 1rem);
+        flex: 0 0 calc(50% - 1rem);
+ */
+
+.disable-click{
+    pointer-events: none;
+}
+
+.anim {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: green;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+.board{
+    position: absolute;
+    height: 450px;
+    width: 450px;
+    background-color: #3d3d3d;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 2rem 0 1rem 1rem;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-width: 0 5px 5px 0;
+    border-style: solid;
+    border-color: #3d3d3d;
+    box-shadow: 1px -1px 30px 2px #3d3d3d;
+
+}
+
+.notice{
+    position:absolute;
+    color: white;
+    top: 200px;
+    left: 25%;
+}
+
+.game-result{
+    visibility: hidden;
+}
+
+
+
+
+
+.square{
+
+    position: relative;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 calc(30*1rem);
+    -ms-flex: 0 0 calc(30*1rem);
+    flex: 0 0 calc(9 *1rem);
+    height: calc( 9*1rem);
+    overflow: hidden;
+
+    background-color: yellow;
+    border-width: 0 5px 5px 0;
+    border-style: solid;
+    border-color: rgb(28, 28, 28);
+}
+
+.scale-y {
+
+    -webkit-transition: 650ms transform cubic-bezier(0.7, 0.3, 0, 1);
+    transition: 650ms transform cubic-bezier(0.7, 0.3, 0, 1);
+    -webkit-transform: scaleY(0) ;
+    transform: scaleY(0) ;
+    will-change: transform;
+}
+.board .scale-y  {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+}
+
+.scale-x {
+    animation-direction: reverse;
+    -webkit-transition: 650ms transform cubic-bezier(0.7, 0.3, 0, 1);
+    transition: 650ms transform cubic-bezier(0.7, 0.3, 0, 1);
+    -webkit-transform: scaleX(1) ;
+    transform: scaleX(1);
+    will-change: transform;
+}
+.board .scale-x {
+    -webkit-transform: scaleX(0) ;
+    transform: scaleX(0) ;
+}

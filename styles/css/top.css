@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Alex+Brush|Roboto|Rochester");
+.click-item {
+  cursor: pointer; }
+  .click-item:hover {
+    color: white; }
+  .click-item:active {
+    color: #d99fff; }
+
+h1, h2, h3, h4, h5, .main-font {
+  font-family: 'Alex Brush', cursive; }
+
+h1.sub-font, h2.sub-font, h3.sub-font, h4.sub-font, h5.sub-font, .sub-font {
+  font-family: 'Roboto', sans-serif; }
+
+.body-font {
+  font-family: 'Roboto', sans-serif; }
+
+.alt-script {
+  font-family: 'Rochester', cursive; }
+
+.right-boundary {
+  flex: 0 0 20%; }
+
+.header-top-buffer {
+  padding-top: 160px; }
+
+.fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: gray;
+  border-bottom: 2px solid black; }
+
+.header-section {
+  height: 160px;
+  background: gray; }
+
+.flex-re-adjust {
+  flex: 0 0 8.83%; }
+
+.header-items {
+  flex: 0 0 10.9%;
+  align-self: flex-end; }
+
+.header-labels {
+  position: absolute;
+  top: -45px;
+  transform: rotateZ(20deg); }
+
+.header-boxes {
+  top: -16px;
+  position: relative;
+  background: #a0a0a0;
+  border: 2px solid #878787;
+  height: 60px;
+  width: 80px;
+  transform: rotateZ(-20deg);
+  align-self: flex-end; }
+
+.click-title {
+  cursor: pointer; }
+  .click-title:hover {
+    color: #1979ff; }
+  .click-title:active {
+    color: #d99fff; }

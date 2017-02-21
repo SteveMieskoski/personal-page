@@ -1,0 +1,27 @@
+{
+  "name": "Jhunter",
+  "version": "0.0.0-alpha9",
+  "scripts": {
+    "server": "node backend/server.js",
+    "server:dist": "node backend/server_dist.js",
+    "test:unit": "karma start",
+    "update:angular": "npm update angular angular-animate angular-aria angular-cookies angular-drag-and-drop-lists angular-dragula angular-jwt angular-lock angular-material angular-messages angular-route angular-sanitize angular-storage angular-touch angular-ui-bootstrap angular-ui-grid angular-ui-router angular-ui-grid angular-ui-router angular-mocks --save"
+  },
+  "dependencies": {
+
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-print": "^2.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-angular-templatecache": "^2.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-order": "^1.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}

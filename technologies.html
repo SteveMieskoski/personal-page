@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles/css/main.css"/>
+  <title>Title</title>
+</head>
+<body>
+<div class="fix">
+  <div class="frow">
+    <div class="fcol-full">
+      <div class="frow between-fcol">
+        <div class="fcol-0"></div>
+        <div class="fcol-3 set-height">
+          <h1 class="click-item" onclick="goToPage('main')">Steve Mieskoski</h1>
+        </div>
+        <!--<div class="fcol-2">-->
+
+        <h1 class="fcol-2 click-item" onclick="goToPage('projects')">Projects</h1>
+        <div class="fcol-2">
+          <h1 class="projects-label click-item">Technologies</h1>
+          <span class="side-nav-trigger sub-font click-item" onclick="showSlide(null, 'side')">Tech Listing</span>
+          <div>
+            <div id="side-nav" class="side-nav hide-side frow">
+              <div class="fcol-full">
+                <dl class="sub-font" id="side-nav-section-one" >
+                  <dt class="side-nav-label">Frameworks</dt>
+                </dl>
+                <dl class="sub-font" id="side-nav-section-two">
+                  <dt  class="side-nav-label">Other Lanugages</dt>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1 class="fcol-2 click-item" onclick="goToPage('about')">About</h1>
+        <h1 class="fcol-1 click-item" onclick="goToPage('blog')">Blog</h1>
+        <h1 class="fcol-1 click-item" onclick="goToPage('contact')">Contact</h1>
+
+        <!-- </div>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="header-top-buffer">
+  <div class="frow " id="tech-items-container-one">
+  </div>
+  <div class="frow " id="tech-items-container-two"></div>
+</div>
+<script src="src/js/smoothscroll-polyfill.js"></script>
+<script src="src/js/rAF-polyfill.js"></script>
+<script src="src/js/technology_content.js"></script>
+<script src="src/js/index.js"></script>
+</body>
+</html>

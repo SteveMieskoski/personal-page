@@ -1,0 +1,13 @@
+{"posts":
+[
+   {"file_ref": "blog",
+     "file_path": "/personal-page/content/blog/",
+     "full_title": "blog",
+    "date": "today",
+  "snippet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sodales diam. Nullam sit amet erat maximus, sagittis mauris eu, aliquam dui. Aliquam erat volutpat. Donec consequat, nibh ut vulputate ultricies, nisl ex aliquam dui, congue mattis mi metus volutpat leo. Aliquam lobortis bibendum maximus. Morbi auctor placerat ultrices. Quisque vitae nisl erat. In feugiat cursus elit. Etiam vitae elit in turpis commodo dignissim. Cras consequat consectetur magna sit amet pellentesque. Etiam eros massa, accumsan ac varius eget, maximus at nunc. Proin tincidunt eros velit, sit amet pulvinar magna congue sed. In sollicitudin ligula eu justo posuere, non congue orci aliquet. Aliquam quis pulvinar velit. Quisque mattis dolor nec est tincidunt tincidunt."},
+   {"file_ref": "blog2",
+     "file_path": "/personal-page/content/blog/",
+     "full_title": "blog TWO",
+    "date": "today",
+    "snippet": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sodales diam. Nullam sit amet erat maximus, sagittis mauris eu, aliquam dui. Aliquam erat volutpat. Donec consequat, nibh ut vulputate ultricies, nisl ex aliquam dui, congue mattis mi metus volutpat leo. Aliquam lobortis bibendum maximus. Morbi auctor placerat ultrices. Quisque vitae nisl erat. In feugiat cursus elit. Etiam vitae elit in turpis commodo dignissim. Cras consequat consectetur magna sit amet pellentesque. Etiam eros massa, accumsan ac varius eget, maximus at nunc. Proin tincidunt eros velit, sit amet pulvinar magna congue sed. In sollicitudin ligula eu justo posuere, non congue orci aliquet. Aliquam quis pulvinar velit. Quisque mattis dolor nec est tincidunt tincidunt."}
+]}

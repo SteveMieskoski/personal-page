@@ -1,0 +1,53 @@
+.frow {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .frow .fcol-full {
+    flex: 0 0 100%; }
+  .frow .fcol-11 {
+    flex: 0 0 91.66666667%; }
+  .frow .fcol-10 {
+    flex: 0 0 83.33333333%; }
+  .frow .fcol-9 {
+    flex: 0 0 75%; }
+  .frow .fcol-8 {
+    flex: 0 0 66.66666667%; }
+  .frow .fcol-7 {
+    flex: 0 0 58.33333333%; }
+  .frow .fcol-6 {
+    flex: 0 0 50%; }
+  .frow .fcol-5 {
+    flex: 0 0 41.66666667%; }
+  .frow .fcol-4 {
+    flex: 0 0 33.3333%; }
+  .frow .fcol-3 {
+    flex: 0 0 25%; }
+  .frow .fcol-2 {
+    flex: 0 0 16.667%; }
+  .frow .fcol-1 {
+    flex: 0 0 8.333%; }
+  .frow .start-fcol {
+    justify-content: flex-start;
+    text-align: start; }
+  .frow .center-fcol {
+    justify-content: center;
+    text-align: center; }
+  .frow .end-fcol {
+    justify-content: flex-end;
+    text-align: end; }
+  .frow .top-fcol {
+    align-items: flex-start; }
+  .frow .fcol-top {
+    align-self: flex-start; }
+  .frow .fcol-bottom {
+    align-self: flex-end; }
+  .frow .middle-fcol {
+    align-items: center; }
+  .frow .bottom-fcol {
+    align-items: flex-end; }
+  .frow .around-fcol {
+    justify-content: space-around; }
+  .frow .between-fcol {
+    justify-content: space-between; }

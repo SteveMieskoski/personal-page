@@ -1,0 +1,123 @@
+
+
+
+.demo{
+    background-color:blue;
+    height: 50px;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+}
+
+.demo1{
+    background-color:yellow;
+    height: 50px;
+    border-width: 3px;
+    border-color: black;
+    border-style: solid;
+}
+
+body{
+    background-color: white;
+}
+
+
+
+
+.calc-body{
+    height: 500px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 20%;
+    background-color: #7e806f;
+    border-radius: 20px;
+    border-width: 1px;
+    box-shadow: -7px -5px 20px 1px rgba(4, 4, 4, 0.68), inset -1px -5px 20px 1px #adaf9c;
+    /* box-shadow:  0 0 5px 10px #434749;*/
+}
+
+
+.calc-screen-container{
+    height: 100px;
+
+}
+
+.calc-screen{
+    margin: 15px;
+    padding: 15px;
+    border-width: 15px;
+    border-color: #7e806f;
+    border-style: solid;
+
+    height: 80px;
+    border-radius: 21px;
+    background-color: #2858ff;
+}
+
+.screen-text{
+    mix-blend-mode: screen;
+    color: #716d6d;
+    font-size: 1.2em;
+}
+
+.calc-body-inner{
+    height: 360px;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: inset 0 0 7px 5px #434749;
+    background-color: #767d7f;
+    border-radius: 10px;
+}
+
+
+.calc-buttons-container{
+    height: 340px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    border-radius: 10px;
+    background-color: #71787a;
+}
+
+button.upper-enter{
+    font-size: .8em;
+}
+
+button.lower-enter{
+    margin: -4px 3px 7px 7px;
+    height: 60px;
+    width: 49px;
+    box-shadow: 0 0 0px 0 #434749;
+
+}
+
+button.add-bottom{
+    margin: -4px 7px 2px 7px;
+    height: 60px;
+    box-shadow: 0 0 0px 0 #434749;
+}
+
+
+button.zero{
+    margin: 7px 7px 7px 7px;
+    width: 80px;
+}
+
+button {
+    height: 50px;
+    margin: 7px;
+    box-shadow: 0 1px 2px 1px #434749;
+
+}
+
+.btn-font{
+    font-size: 1.2em;
+}
+
+.operators-font{
+    font-size: 1.5em;
+
+}

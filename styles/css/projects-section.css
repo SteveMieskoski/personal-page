@@ -1,0 +1,73 @@
+.top-nav-trigger {
+  cursor: pointer; }
+
+.top-nav {
+  position: fixed;
+  transition: all 1s ease-in-out;
+  background: gray; }
+
+.show-top {
+  position: fixed;
+  top: 82px;
+  opacity: 1;
+  height: 300px; }
+
+.hide-top {
+  position: fixed;
+  top: -300px;
+  opacity: 0;
+  height: 300px; }
+
+.top-nav-label {
+  text-decoration-line: underline; }
+
+.projects-label {
+  margin-bottom: 0; }
+
+.projects-section {
+  position: relative;
+  height: 20rem;
+  background: #4c6eab; }
+
+.jh-frame-container {
+  width: 800px; }
+  .jh-frame-container .jh-frame {
+    width: 800px; }
+
+.frame-one {
+  border: 30px solid pink;
+  border-image: url(../../assets/images/picture-1053849_frame_only2.png) 25%;
+  border-image-repeat: stretch; }
+
+.project-label {
+  font-size: 24px; }
+
+.calculator-contain {
+  height: 675px;
+  width: 400px;
+  margin-bottom: 100px; }
+  .calculator-contain .calculator {
+    height: 650px;
+    width: 400px;
+    outline: none; }
+
+.simon-contain {
+  height: 600px;
+  width: 600px;
+  margin-bottom: 100px; }
+  .simon-contain .simon {
+    height: 600px;
+    width: 600px;
+    border: none; }
+
+.tic-tac-toe-contain {
+  height: 550px;
+  width: 550px;
+  margin-bottom: 100px;
+  background: #212121; }
+  .tic-tac-toe-contain .tic-tac-toe {
+    height: 550px;
+    width: 550px;
+    border: none;
+    margin: 0;
+    padding: 0; }

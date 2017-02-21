@@ -1,0 +1,94 @@
+
+
+.frow {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .fcol-full {
+    flex: 0 0 100%;
+  }
+  .fcol-11 {
+    flex: 0 0 91.66666667%;
+  }
+  .fcol-10 {
+    flex: 0 0 83.33333333%;
+  }
+  .fcol-9 {
+    flex: 0 0 75%;
+  }
+  .fcol-8 {
+    flex: 0 0 66.66666667%;
+  }
+  .fcol-7 {
+    flex: 0 0 58.33333333%;
+  }
+  .fcol-6 {
+    flex: 0 0 50%;
+   // padding: 0 1rem;
+  }
+  .fcol-5 {
+    flex: 0 0 41.66666667%;
+  }
+  .fcol-4 {
+    flex: 0 0 33.3333%;
+  //  padding: 0 1rem;
+  }
+  .fcol-3 {
+    flex: 0 0 25%;
+  //  padding: 0 1rem;
+  }
+  .fcol-2 {
+    flex: 0 0 16.667%;
+  //  padding: 0 1rem;
+  }
+  .fcol-1 {
+    flex: 0 0 8.333%;
+    //  padding: 0 1rem;
+  }
+  .start-fcol {
+    justify-content: flex-start;
+    text-align: start;
+  }
+
+  .center-fcol {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .end-fcol {
+    justify-content: flex-end;
+    text-align: end;
+  }
+
+  .top-fcol {
+    align-items: flex-start;
+  }
+
+  .fcol-top{
+    align-self: flex-start;
+  }
+
+  .fcol-bottom{
+    align-self: flex-end;
+  }
+
+  .middle-fcol {
+    align-items: center;
+  }
+
+  .bottom-fcol {
+    align-items: flex-end;
+  }
+
+  .around-fcol {
+    justify-content: space-around;
+  }
+
+
+  .between-fcol {
+    justify-content: space-between;
+  }
+}
