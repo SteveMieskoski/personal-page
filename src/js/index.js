@@ -15,12 +15,12 @@ function goToPage(page){
  */
 
     pages = {
-        main: 'index.html',
-        tech: 'technologies.html',
-        projects: 'projects.html',
-        about: 'about.html',
-        blog: 'blog.html',
-        contact: 'contact.html'
+        main: '/',
+        tech: '/technologies.html',
+        projects: '/projects.html',
+        about: '/about.html',
+        blog: '/blog.html',
+        contact: '/contact.html'
     };
     host = location.origin;
     location.assign(host + pages[page]);
