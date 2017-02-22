@@ -2,14 +2,25 @@
 
 function goToPage(page){
     let pages, host;
+/*
+
+ pages = {
+ main: '/personal-page/index.html',
+ tech: '/personal-page/technologies.html',
+ projects: '/personal-page/projects.html',
+ about: '/personal-page/about.html',
+ blog: '/personal-page/blog.html',
+ contact: '/personal-page/contact.html'
+ };
+ */
 
     pages = {
-        main: '/personal-page/index.html',
-        tech: '/personal-page/technologies.html',
-        projects: '/personal-page/projects.html',
-        about: '/personal-page/about.html',
-        blog: '/personal-page/blog.html',
-        contact: '/personal-page/contact.html'
+        main: 'index.html',
+        tech: 'technologies.html',
+        projects: 'projects.html',
+        about: 'about.html',
+        blog: 'blog.html',
+        contact: 'contact.html'
     };
     host = location.origin;
     location.assign(host + pages[page]);
