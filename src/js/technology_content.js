@@ -3,12 +3,12 @@
 
     host = location.origin;
     const urls = [
-        {name: 'angular', id: 'angular',path: '/personal-page/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
-        {name: 'node', id: 'node',path: '/personal-page/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
-        {name: 'SCSS', id: 'scss',path: '/personal-page/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
-        {name: 'jQuery', id: 'jquery',path: '/personal-page/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
-        {name: 'Linux', id: 'linux',path: '/personal-page/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
-        {name: 'python', id: 'python',path: '/personal-page/content/tech/', area: 'side-nav-section-two' , location: 'tech-items-container-two'}
+        {name: 'angular', id: 'angular',path: '/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
+        {name: 'node', id: 'node',path: '/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
+        {name: 'SCSS', id: 'scss',path: '/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
+        {name: 'jQuery', id: 'jquery',path: '/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
+        {name: 'Linux', id: 'linux',path: '/content/tech/', area: 'side-nav-section-one' , location: 'tech-items-container-one'},
+        {name: 'python', id: 'python',path: '/content/tech/', area: 'side-nav-section-two' , location: 'tech-items-container-two'}
     ];
 
     if (self.fetch) {
