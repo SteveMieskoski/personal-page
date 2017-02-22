@@ -82,33 +82,44 @@ body{
     background-color: #71787a;
 }
 
-button.upper-enter{
+.calc-buttons{
+    padding-left: 20px;
+}
+
+.calc-buttons-top{
+    margin-top: 20px;
+}
+
+button.enter{
     font-size: .8em;
-}
-
-button.lower-enter{
-    margin: -4px 3px 7px 7px;
-    height: 60px;
+    height: 80px;
     width: 49px;
-    box-shadow: 0 0 0px 0 #434749;
-
 }
 
-button.add-bottom{
-    margin: -4px 7px 2px 7px;
-    height: 60px;
-    box-shadow: 0 0 0px 0 #434749;
+
+button.sub{
+    width: 49px;
+}
+button.add{
+    height: 80px;
+    width: 49px;
 }
 
 
 button.zero{
-    margin: 7px 7px 7px 7px;
-    width: 80px;
+    margin: 10px 7px 10px 7px;
+    width: 100px;
+    height: 50px;
+}
+button.empty{
+    margin: 10px 7px 10px 7px;
+    width:  84px;
+    height: 50px;
 }
 
 button {
     height: 50px;
-    margin: 7px;
+    margin: 10px 7px 10px 7px;
     box-shadow: 0 1px 2px 1px #434749;
 
 }
@@ -119,5 +130,20 @@ button {
 
 .operators-font{
     font-size: 1.5em;
+
+}
+
+
+.frow {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.frow .fcol-1 {
+    flex: 0 0 15%;
 
 }

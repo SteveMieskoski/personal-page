@@ -9,14 +9,18 @@ $(document).ready(function () {
     var start = $('.start');
     var canClick = $('.can-click');
     var strict = $('.strict');
+    var reset = $('.reset-label');
 
     var player = false;
     var round = 1;
     var seq;
     var game = true;
+    var observes = {};
     var roundSlice;
     var playerCount = 0;
     var vm = this;
+    vm.inprogress = false;
+
 
     var audio1 = new Audio('./simonSound1.mp3');
     var audio2 = new Audio('./simonSound2.mp3');
@@ -74,11 +78,6 @@ $(document).ready(function () {
         startStrictGame();
     });
 
-    //var disposableOne;
-    //  var disposableTwo;
-    //  var disposableThree;
-    //  var disposableFour;
-    //  var disposable;
 
     $('.restart').click(function () {
         vm.retry = true;
@@ -88,43 +87,53 @@ $(document).ready(function () {
 
     function startGame() {
 
-        round = 0;
-        var beginSeq = createSequence();
-        vm.obsSeq = Rx.Observable.from(beginSeq);
-        vm.retry = false;
-        vm.strictMode = false;
-        vm.restart = false;
-        begin('start', vm.obsSeq);
+        if(!vm.inprogress) {
+            vm.inprogress = true;
+            console.log('startgame',vm);
+            round = 0;
+            observes.beginSeq = createSequence();
+            observes.obsSeq = Rx.Observable.from(observes.beginSeq);
+            vm.retry = false;
+            vm.strictMode = false;
+            vm.restart = false;
+            begin('start', observes.obsSeq);
+        }
     }
 
     function startStrictGame() {
-        round = 0;
-        var beginSeq = createSequence();
-        vm.obsSeq = Rx.Observable.from(beginSeq);
-        vm.retry = true;
-        vm.strictMode = true;
-        vm.restart = false;
-        begin('start', vm.obsSeq);
+        if(!vm.inprogress){
+            console.log('start strict',vm);
+            round = 0;
+            observes.beginSeq = createSequence();
+            observes.obsSeq = Rx.Observable.from(observes.beginSeq);
+            vm.retry = true;
+            vm.strictMode = true;
+            vm.restart = false;
+            begin('start', observes.obsSeq);
+        }
+
     }
 
     function endgame() {
+        vm.inprogress = false;
         $('.counter').text('Game Over');
         if (vm.strictMode) {
-            var disposableNewGame = Rx.Scheduler.default.scheduleFuture(
+            observes.disposableNewGame = Rx.Scheduler.default.scheduleFuture(
                 'one',
                 2000,
                 function (scheduler, x) {
                     startStrictGame();
-                    disposableNewGame.dispose();
+                    observes.disposableNewGame.dispose();
                 }
             );
         } else {
-            var disposableStrictGame = Rx.Scheduler.default.scheduleFuture(
+            observes.disposableStrictGame = Rx.Scheduler.default.scheduleFuture(
                 'one',
                 2000,
                 function (scheduler, x) {
+                    console.log(x);
                     startGame();
-                    disposableStrictGame.dispose();
+                    observes.disposableStrictGame.dispose();
                 }
             );
         }
@@ -134,13 +143,13 @@ $(document).ready(function () {
     function winner() {
         $('.counter').text('Winner');
        // $('.winner').append('<h1 class="winner-show">Winner!</h1>');
-        var disposableStrictGame = Rx.Scheduler.default.scheduleFuture(
+        observes.disposableStrictGame = Rx.Scheduler.default.scheduleFuture(
             'one',
             2000,
             function (scheduler, x) {
                 $('.winner-show').detach();
                 startGame();
-                disposableStrictGame.dispose();
+                observes.disposableStrictGame.dispose();
             }
         );
     }
@@ -149,30 +158,35 @@ $(document).ready(function () {
 
 
         function begin(args) {
+            console.log('observes', observes);
+
             if (vm.restart) {
                 endgame();
             }
             if ((arguments.length === 2) && (arguments[0] = 'start')) {
                 round = 1;
                 $('.counter').text(round);
-                var outSource = vm.obsSeq.take(round).toArray();
-                outSource.subscribe(
+                observes.outSource = observes.obsSeq.take(round).toArray();
+                observes.outSource.subscribe(
                     function (x) {
                         rxjsShow(x);
                     })
             }
             if (arguments.length === 0) {
-                var playerSource = vm.obsSeq.take(round).toArray();
-                playerSource.subscribe(
+
+                observes.playerSource = observes.obsSeq.take(round).toArray();
+                observes.playerSource.subscribe(
                     function (x) {
                         playerTurn(x, 0);
                     });
 
             } else if (arguments[0] === 'next') {
+
+
                 ++round;
                 $('.counter').text(round);
-                outSource = vm.obsSeq.take(round).toArray();
-                outSource.subscribe(
+                observes.outSource = observes.obsSeq.take(round).toArray();
+                observes.outSource.subscribe(
                     function (x) {
                         rxjsShow(x);
                     })
@@ -184,12 +198,14 @@ $(document).ready(function () {
                 setTimeout(flash, 100);
                 if (!vm.retry) {
                     vm.retry = !vm.retry;
-                    outSource = vm.obsSeq.take(round).toArray();
-                    outSource.subscribe(
+                    observes.outSource = observes.obsSeq.take(round).toArray();
+
+                    observes.outSource.subscribe(
                         function (x) {
                             rxjsShow(x);
                         })
                 } else {
+
                     endgame();
                 }
 
@@ -213,7 +229,7 @@ $(document).ready(function () {
 
             patternArray = arguments[0];
             correctSelection = arguments[0][playerChoice];
-            //console.log(patternArray); // todo remove debug item
+            console.log(patternArray); // todo remove debug item
             if (playerChoice === arguments[0].length) {
                 if (playerChoice === 11) {
                     winner();
@@ -225,89 +241,92 @@ $(document).ready(function () {
 
             } else {
 
-                var oneClick = Rx.Observable.fromEvent(canClick, 'click');
+                observes.oneClick = Rx.Observable.fromEvent(canClick, 'click');
 
-                var oneSub = oneClick.subscribe(
+                observes.oneSub = observes.oneClick.subscribe(
                     function (x) {
+
                         switch (x.currentTarget.id) {
                             case '1':
                                 audio1.play();
                                 oneOn();
-                                var disposableOne = Rx.Scheduler.default.scheduleFuture(
+                                observes.disposableOne = Rx.Scheduler.default.scheduleFuture(
                                     'one',
                                     250,
                                     function (scheduler, x) {
                                         oneOn();
-                                        disposableOne.dispose();
+                                        observes.disposableOne.dispose();
                                     }
                                 );
                                 if (correctSelection === 1) {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     return playerTurn(patternArray, ++playerChoice)
                                 } else {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
+
                                     begin('retry');
                                 }
                                 break;
                             case '2':
                                 audio2.play();
                                 twoOn();
-                                var disposableTwo = Rx.Scheduler.default.scheduleFuture(
+                                observes.disposableTwo = Rx.Scheduler.default.scheduleFuture(
                                     'one',
                                     250,
                                     function (scheduler, x) {
                                         twoOn();
-                                        disposableTwo.dispose();
+                                        observes.disposableTwo.dispose();
                                     }
                                 );
                                 if (correctSelection === 2) {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     return playerTurn(patternArray, ++playerChoice)
                                 } else {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     begin('retry');
                                 }
                                 break;
                             case '3':
                                 audio3.play();
                                 threeOn();
-                                var disposableThree = Rx.Scheduler.default.scheduleFuture(
+                                observes.disposableThree = Rx.Scheduler.default.scheduleFuture(
                                     'one',
                                     250,
                                     function (scheduler, x) {
                                         threeOn();
-                                        disposableThree.dispose();
+                                        observes.disposableThree.dispose();
                                     }
                                 );
                                 if (correctSelection === 3) {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     return playerTurn(patternArray, ++playerChoice)
                                 } else {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     begin('retry');
                                 }
                                 break;
                             case '4':
                                 audio4.play();
                                 fourOn();
-                                var disposablefour = Rx.Scheduler.default.scheduleFuture(
+                                observes.disposablefour = Rx.Scheduler.default.scheduleFuture(
                                     'one',
                                     250,
                                     function (scheduler, x) {
                                         fourOn();
-                                        disposablefour.dispose();
+                                        observes.disposablefour.dispose();
                                     }
                                 );
                                 if (correctSelection === 4) {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     return playerTurn(patternArray, ++playerChoice)
                                 } else {
-                                    oneSub.dispose();
+                                    observes.oneSub.dispose();
                                     begin('retry');
                                 }
                                 break;
                             default:
-                                oneSub.dispose();
+
+                                observes.oneSub.dispose();
                                 endgame();
                                 if(vm.restart){
                                     endgame();
@@ -323,25 +342,25 @@ $(document).ready(function () {
 
 
         function rxjsShow(showSeq) {
-            var subject = new Rx.Subject();
-            var disposable = Rx.Scheduler.default.schedulePeriodic(
+            observes.subject = new Rx.Subject();
+            observes.disposable = Rx.Scheduler.default.schedulePeriodic(
                 0,
                 1000,
                 function (m) {
-                    subject.onNext(showSeq[m]);
+                    observes.subject.onNext(showSeq[m]);
                     var end = showSeq.length - 1;
                     if (++m > end) {
-                        disposable.dispose();
+                        observes.disposable.dispose();
                         begin();
                     }
                     if(vm.restart){
-                        disposable.dispose();
+                        observes.disposable.dispose();
                         endgame();
                     }
                     return m;
                 });
 
-            var subscription = subject.subscribe(
+            observes.subscription = observes.subject.subscribe(
                 function (x) {
                     switch (x) {
                         case 1:
@@ -365,7 +384,7 @@ $(document).ready(function () {
                             setTimeout(fourOn, 500);
                             break;
                         default:
-                            disposable.dispose();
+                            observes.disposable.dispose();
                             break;
                     }
                 });
