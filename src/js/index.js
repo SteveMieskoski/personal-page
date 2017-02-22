@@ -1,7 +1,7 @@
 
 
 function goToPage(page){
-    let pages, host;
+    let pages, host, url;
 /*
 
  pages = {
@@ -15,15 +15,16 @@ function goToPage(page){
  */
 
     pages = {
-        main: '/',
-        tech: '/technologies.html',
-        projects: '/projects.html',
-        about: '/about.html',
-        blog: '/blog.html',
-        contact: '/contact.html'
+        main: '',
+        tech: 'technologies.html',
+        projects: 'projects.html',
+        about: 'about.html',
+        blog: 'blog.html',
+        contact: 'contact.html'
     };
     host = location.origin;
-    location.assign(host + pages[page]);
+    url = host + '/' + pages[page];
+    location.assign(url);
 }
 
 
